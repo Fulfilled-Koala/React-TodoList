@@ -1,5 +1,10 @@
 # React Todo
 
+![](./docs/1440_dark.png)
+![](./docs/1440_light.png)
+![](./docs/1440_dark_dialog.png)
+![](./docs/1440_light_dialog.png)
+
 ## Dependencies
 
 - [Headless UI](https://headlessui.com/)
