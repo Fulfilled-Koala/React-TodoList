@@ -37,6 +37,13 @@ const useTodos = create<State>()(
           ),
         }));
       },
+      updateTodo(id: number, todo: TodoForm) {
+        setState((state) => ({
+          todos: state.todos.map((t) =>
+            t.id === id ? { ...t, ...todo } : t
+          ),
+        }));
+      }
     }),
     {
       name: "todos",
