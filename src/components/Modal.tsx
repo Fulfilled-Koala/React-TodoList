@@ -1,13 +1,13 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import Form from "./Form";
+import { Fragment, ReactNode } from "react";
 
 type Props = {
   show: boolean;
   onClose: () => void;
-};
+  children: ReactNode;
+}
 
-export default function FormModal({ show, onClose }: Props): JSX.Element {
+export default function Modal({show, onClose, children}: Props): JSX.Element {
   return (
     <Transition appear show={show} as={Fragment}>
       <Dialog as="div" className="fixed inset-0 z-20 overflow-y-auto" onClose={onClose}>
@@ -37,7 +37,7 @@ export default function FormModal({ show, onClose }: Props): JSX.Element {
             leaveTo="opacity-0 scale-95"
           >
             <div className="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-md bg-white p-6 text-left align-middle shadow-xl transition-all dark:bg-dim-500">
-              <Form onClose={onClose} />
+              {children}
             </div>
           </Transition.Child>
         </div>
