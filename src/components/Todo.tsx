@@ -3,7 +3,7 @@ import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import { Todo as TodoType } from "../types";
 import useTodos from "../store/useTodos";
-import Form from "./Form";
+import FormModal from "./FormModal";
 import { classNames } from "../helpers";
 
 type Props = {
@@ -31,7 +31,7 @@ export default function Todo ({ todo }: Props): JSX.Element {
 
   return (
     <>
-      <Form show={showModal} onClose={() => setShowModal(false)} editingState={todo} />
+      <FormModal show={showModal} onClose={() => setShowModal(false)} editingState={todo} />
 
       <li className="flex items-center justify-between gap-2 py-4 px-6 even:border-y dark:border-neutral-600">
         <div className="flex items-center gap-2">
